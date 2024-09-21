@@ -1,0 +1,107 @@
+/:
+  Controller: "Main"
+  Action: "home"
+
+/login:
+  Controller: "Security"
+  Action: "login"
+
+/register:
+  Controller: "Security"
+  Action: "register"
+
+/logout:
+  Controller: "Security"
+  Action: "logout"
+
+/install:
+  Controller: Install
+  Action: install
+
+/admin:
+  Controller: "Main"
+  Action: "dashBoard"
+
+/ajout-utilisateur:
+  Controller: "User"
+  Action: "add"
+
+/del-utilisateur:
+  Controller: "User"
+  Action: "delete"
+
+/show-utilisateur:
+  Controller: "User"
+  Action: "show"
+
+/list-utilisateurs:
+  Controller: "User"
+  Action: "list"
+
+/maj-utilisateurs:
+  Controller: "User"
+  Action: "edit"
+
+/builder:
+  Controller: "Builder"
+  Action: createPage
+
+/update-user:
+  Controller: "UserController"
+  Action: "edit"
+
+/forgot-pwd:
+  Controller: PwdRecovery
+  Action: forgotPwd
+
+/resetpwd:
+  Controller: PwdRecovery
+  Action: resetPwd
+
+/reviews:
+  Controller: ReviewController
+  Action: show
+
+/review-list:
+  Controller: ReviewController
+  Action: createReview
+
+/review-manager:
+  Controller: ReviewController
+  Action: manageReview
+
+/page-list:
+  Controller: Builder
+  Action: list
+
+/page-edit:
+  Controller: Builder
+  Action: edit
+
+/page-new:
+  Controller: Builder
+  Action: create
+
+/user-list:
+  Controller: UserController
+  Action: show
+
+/menus:
+  Controller: PageController
+  Action: menus
+
+/entrees:
+  Controller: PageController
+  Action: entrees
+
+/plats:
+  Controller: PageController
+  Action: plats
+
+/desserts:
+  Controller: PageController
+  Action: desserts
+
+/page:
+  Controller: Builder
+  Action: show

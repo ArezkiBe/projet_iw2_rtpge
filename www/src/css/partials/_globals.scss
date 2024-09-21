@@ -1,0 +1,48 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+// body {
+// 	font-family: $font1;
+// 	color: var(--text-color);
+// 	// background-color: rgba(89, 63, 128, 0.65);
+// 	background-color: #DECDB2;	
+// }
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+input {
+	&[type="text"],
+	&[type="password"],
+	&[type="email"],
+	&[type="number"] {
+		padding: 0.67em 1em;
+		border-radius: var(--main-radius);
+		border: solid thin var(--grey);
+		min-width: rem(220);
+		color: var(--grey);
+	}
+	&[type="submit"] {
+		display: block;
+		width: 30%;
+		min-width: rem(220);
+		padding: 0.67em 1em;
+		border: none;
+		border-radius: 5px;
+		background: rgba(165, 39, 102, 0.75);
+		color: white;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+	
+}

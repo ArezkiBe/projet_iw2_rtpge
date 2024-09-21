@@ -1,0 +1,57 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2c3e50;
+$text-color: #fff;
+$hover-color: lighten($primary-color, 10%);
+$transition-duration: 0.3s;
+
+// Styles de la navbar
+.front-navbar {
+  background-color: $primary-color;
+  padding: 1rem;
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .logo {
+      font-size: 1.5rem;
+      color: $text-color;
+      text-decoration: none;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+
+      li {
+        a {
+          color: $text-color;
+          text-decoration: none;
+          font-size: 1.1rem;
+          transition: background-color $transition-duration;
+
+          &:hover {
+            background-color: $hover-color;
+            padding: 0.5rem;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section styling
+section {
+  padding: 2rem;
+  h1 {
+    color: $secondary-color;
+  }
+  p {
+    font-size: 1.2rem;
+    color: darken($secondary-color, 10%);
+  }
+}

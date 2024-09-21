@@ -1,0 +1,46 @@
+version: '3'
+services:
+  web:
+    build: site
+    ports :
+      - "80:80"
+    volumes:
+      - ./www:/var/www/html/
+      - ./server/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./server/apache2.conf:/etc/apache2/apache2.conf
+      - ./server/php.ini:/usr/local/etc/php/php.ini
+  
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: esgi
+      POSTGRES_USER: esgi
+      POSTGRES_PASSWORD: esgipwd
+      POSTGRES_ROOT_PASSWORD: esgipwd
+    ports:
+      - "5432:5432"
+    volumes:
+      - postges_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: esgi@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: esgipwd
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - 15432:80
+    depends_on:
+      - postgres
+
+  composer:
+    restart: 'no'
+    container_name: composer
+    image: composer:latest
+    command: install
+    volumes:
+      - ./www/administrator/php:/app
+
+volumes:
+  postges_data:
